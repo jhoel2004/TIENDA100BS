@@ -1,0 +1,109 @@
+[
+  {
+    "id": "2",
+    "name": "Licuadora Oster Clásica",
+    "price": 100,
+    "category": "Electrodomésticos",
+    "description": "Licuadora resistente, motor potente. Usada pero en perfecto estado de funcionamiento.",
+    "features": [
+      "3 Velocidades",
+      "Vaso de vidrio",
+      "Cuchilla de acero",
+      "Motor 600W"
+    ],
+    "image": "/images/productos/licuadora.jpg"
+  },
+  {
+    "id": "3",
+    "name": "TV Sony 32 Pulgadas (Antigua)",
+    "price": 100,
+    "category": "TV",
+    "description": "Televisor LCD Sony Bravia. No es Smart, pero tiene excelente imagen y sonido.",
+    "features": [
+      "LCD 32\"",
+      "Entrada HDMI",
+      "Control remoto original",
+      "Salida de audio"
+    ],
+    "image": "/images/productos/tv_sony.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Audífonos Bluetooth JBL",
+    "price": 100,
+    "category": "Otros",
+    "description": "Audífonos inalámbricos con buena cancelación de ruido. Poco uso.",
+    "features": [
+      "Bluetooth 5.0",
+      "Batería 20h",
+      "Micrófono integrado",
+      "Graves potentes"
+    ],
+    "image": "/images/productos/audifonos.jpg"
+  },
+  {
+    "id": "1766005242005",
+    "name": "XIAOMI REDMI 0",
+    "category": "Celulares",
+    "description": "tiene un detalle en la pantalla pero lo demas funciona perfectamente, lo remato por aqui",
+    "features": [
+      "ram 4 GB",
+      "memoria",
+      "64 GB",
+      "13 MP"
+    ],
+    "image": "/images/productos/1766005241559-453288490.jpg",
+    "price": 100
+  },
+  {
+    "id": "1766005514937",
+    "name": "SAMSUMG A10S ",
+    "category": "Celulares",
+    "description": "TIENE UN DETALLE EN LA PARTE BAJA, SOLO ESO, EL ENVIO YA ESTA PAGADO",
+    "features": [
+      "32 GG",
+      "2GB RAM",
+      "8MP"
+    ],
+    "image": "/images/productos/1766005514925-787986403.jpg",
+    "price": 100
+  },
+  {
+    "id": "1766005660081",
+    "name": "REDMI 10 C",
+    "category": "Celulares",
+    "description": "tiene un detalle ahi abajo, depues todo funciona a la perfeccion",
+    "features": [
+      "128GB",
+      "4RAM",
+      ""
+    ],
+    "image": "/images/productos/1766005659863-311763390.jpg",
+    "price": 100
+  },
+  {
+    "id": "1766006035072",
+    "name": "J2 CORE",
+    "category": "Celulares",
+    "description": "VENDO POR URGENCIA A ESE PRECIO",
+    "features": [
+      "8GB",
+      "2RAM"
+    ],
+    "image": "/images/productos/1766006035060-242455400.jpg",
+    "price": 100
+  },
+  {
+    "id": "1766007200389",
+    "name": "teco spark 8c",
+    "category": "Celulares",
+    "description": "lo vendo por aqiu por que me lo encontre y necesito el dinero yaaa",
+    "features": [
+      "128gb",
+      "4+2 ram",
+      "3 lineas disponibles"
+    ],
+    "image": "/images/productos/1766007200065-213244314.jpg",
+    "price": 100
+  }
+]
