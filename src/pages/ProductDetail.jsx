@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ShieldCheck, Truck, MapPin } from 'lucide-react';
+import { getProductById } from '../services/productService';
 
 const ProductDetail = () => {
     const { id } = useParams();
@@ -9,13 +10,9 @@ const ProductDetail = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/products')
-            .then(res => res.json())
-            .then(data => {
-                const found = data.find(p => p.id === id);
-                setProduct(found);
-                setLoading(false);
-            });
+        const found = getProductById(id);
+        setProduct(found);
+        setLoading(false);
     }, [id]);
 
     if (loading) return <div className="container">Cargando...</div>;

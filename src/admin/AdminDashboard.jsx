@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getProducts, createProduct, deleteProduct, uploadImage } from '../services/productService';
 
 const AdminDashboard = () => {
     const [products, setProducts] = useState([]);
@@ -12,9 +13,8 @@ const AdminDashboard = () => {
     const [loading, setLoading] = useState(false);
 
     const fetchProducts = () => {
-        fetch('/api/products')
-            .then(res => res.json())
-            .then(setProducts);
+        const data = getProducts();
+        setProducts(data);
     };
 
     useEffect(() => {
@@ -35,17 +35,13 @@ const AdminDashboard = () => {
         setLoading(true);
 
         try {
-            // 1. Upload Image
-            const imageFormData = new FormData();
-            imageFormData.append('image', formData.image);
-
-            const uploadRes = await fetch('/api/products/upload', {
-                method: 'POST',
-                body: imageFormData
-            });
-
-            if (!uploadRes.ok) throw new Error('Error subiendo imagen');
-            const { imageUrl } = await uploadRes.json();
+            // 1. Upload Image (Client side Base64)
+            let imageUrl = '';
+            if (formData.image) {
+                imageUrl = await uploadImage(formData.image);
+            } else {
+                imageUrl = 'https://via.placeholder.com/200?text=No+Image';
+            }
 
             // 2. Create Product
             const productData = {
@@ -56,13 +52,7 @@ const AdminDashboard = () => {
                 image: imageUrl
             };
 
-            const createRes = await fetch('/api/products', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(productData)
-            });
-
-            if (!createRes.ok) throw new Error('Error creando producto');
+            createProduct(productData);
 
             // Reset form and refresh list
             setFormData({
@@ -76,7 +66,7 @@ const AdminDashboard = () => {
             document.getElementById('fileInput').value = '';
 
             fetchProducts();
-            alert('Producto agregado correctamente');
+            alert('Producto agregado correctamente (Guardado en Navegador)');
 
         } catch (error) {
             console.error(error);
@@ -90,7 +80,7 @@ const AdminDashboard = () => {
         if (!confirm('¿Estás seguro de eliminar este producto?')) return;
 
         try {
-            await fetch(`/api/products/${id}`, { method: 'DELETE' });
+            deleteProduct(id);
             fetchProducts();
         } catch (error) {
             alert('Error eliminando producto');

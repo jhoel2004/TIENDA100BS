@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
+import { getProducts } from '../services/productService';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -7,16 +8,10 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/products')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error("Error fetching products:", err);
-                setLoading(false);
-            });
+        // Simulate async fetch for consistency
+        const data = getProducts();
+        setProducts(data);
+        setLoading(false);
     }, []);
 
     const categories = ['Todos', 'Celulares', 'Electrodomésticos', 'TV', 'Otros'];
