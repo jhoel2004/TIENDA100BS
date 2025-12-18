@@ -6,6 +6,8 @@ const Checkout = () => {
     const [location, setLocation] = useState(null);
     const [loading, setLoading] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [manualAddress, setManualAddress] = useState('');
+    const [showManualInput, setShowManualInput] = useState(false);
 
     const handlePhoneSubmit = (e) => {
         e.preventDefault();
@@ -29,16 +31,24 @@ const Checkout = () => {
                     setStep(3); // Move to Payment
                 },
                 (error) => {
-                    alert("Error obteniendo ubicación: " + error.message);
+                    alert("No pudimos obtener tu ubicación automáticamente. Por favor ingrésala manualmente.");
                     setLoading(false);
-                    // Allow proceed anyway for demo purposes
-                    setStep(3);
+                    setShowManualInput(true);
                 }
             );
         } else {
-            alert("Geolocalización no soportada");
+            alert("Geolocalización no soportada. Por favor ingresa tu dirección manualmente.");
             setLoading(false);
+            setShowManualInput(true);
+        }
+    };
+
+    const handleManualSubmit = (e) => {
+        e.preventDefault();
+        if (manualAddress.trim().length > 5) {
             setStep(3);
+        } else {
+            alert("Por favor ingresa una dirección válida.");
         }
     };
 
@@ -102,20 +112,60 @@ const Checkout = () => {
                     <div style={{ textAlign: 'center' }}>
                         <MapPin size={48} color="#ff9900" style={{ marginBottom: '1rem' }} />
                         <h2 style={{ marginBottom: '1rem' }}>Ubicación de Entrega</h2>
-                        <p style={{ marginBottom: '1.5rem', color: '#565959' }}>
-                            Usamos <strong>YANGO</strong> para asegurar que tu pedido llegue rápido y seguro.
-                        </p>
-                        <div style={{ marginBottom: '1.5rem' }}>
-                            <img src="/images/yango_logo.png" alt="Yango Delivery" style={{ height: '40px', objectFit: 'contain' }} />
-                        </div>
-                        <button
-                            className="btn btn-primary"
-                            onClick={handleGetLocation}
-                            style={{ width: '100%', fontSize: '1.1rem', padding: '0.75rem' }}
-                            disabled={loading}
-                        >
-                            {loading ? 'Obteniendo ubicación...' : 'Compartir mi ubicación actual'}
-                        </button>
+
+                        {!showManualInput ? (
+                            <>
+                                <p style={{ marginBottom: '1.5rem', color: '#565959' }}>
+                                    Usamos <strong>YANGO</strong> para asegurar que tu pedido llegue rápido y seguro.
+                                </p>
+                                <div style={{ marginBottom: '1.5rem' }}>
+                                    <img src="/images/yango_logo.png" alt="Yango Delivery" style={{ height: '40px', objectFit: 'contain' }} />
+                                </div>
+                                <button
+                                    className="btn btn-primary"
+                                    onClick={handleGetLocation}
+                                    style={{ width: '100%', fontSize: '1.1rem', padding: '0.75rem', marginBottom: '1rem' }}
+                                    disabled={loading}
+                                >
+                                    {loading ? 'Obteniendo ubicación...' : 'Compartir mi ubicación actual'}
+                                </button>
+                                <button
+                                    onClick={() => setShowManualInput(true)}
+                                    style={{ background: 'none', border: 'none', color: '#007185', cursor: 'pointer', textDecoration: 'underline', fontSize: '0.9rem' }}
+                                >
+                                    ¿No funciona? Ingresar dirección manualmente
+                                </button>
+                            </>
+                        ) : (
+                            <form onSubmit={handleManualSubmit}>
+                                <p style={{ marginBottom: '1rem', color: '#565959' }}>
+                                    Escribe tu dirección detallada o pega un enlace de Google Maps.
+                                </p>
+                                <textarea
+                                    className="form-control"
+                                    rows="3"
+                                    placeholder="Ej. Calle 123, Zona Sur, Casa #45 (o link de Maps)"
+                                    value={manualAddress}
+                                    onChange={(e) => setManualAddress(e.target.value)}
+                                    style={{ marginBottom: '1rem', width: '100%', resize: 'none' }}
+                                    required
+                                />
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary"
+                                    style={{ width: '100%', fontSize: '1.1rem', padding: '0.75rem', marginBottom: '1rem' }}
+                                >
+                                    Confirmar Dirección
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setShowManualInput(false)}
+                                    style={{ background: 'none', border: 'none', color: '#007185', cursor: 'pointer', textDecoration: 'underline', fontSize: '0.9rem' }}
+                                >
+                                    Intentar usar GPS
+                                </button>
+                            </form>
+                        )}
                     </div>
                 )}
 
@@ -185,11 +235,15 @@ const Checkout = () => {
                         <div style={{ background: '#f0fdf4', padding: '1.5rem', borderRadius: '8px', marginBottom: '2rem', border: '1px solid #bbf7d0' }}>
                             <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: '#166534' }}>Detalles de Entrega</h3>
                             <p style={{ marginBottom: '0.5rem' }}><strong>Teléfono:</strong> {phoneNumber}</p>
-                            {location && (
+                            {location ? (
                                 <p style={{ fontSize: '0.9rem', color: '#565959' }}>
                                     <strong>Ubicación:</strong> {location.lat.toFixed(4)}, {location.lng.toFixed(4)}
                                 </p>
-                            )}
+                            ) : manualAddress ? (
+                                <p style={{ fontSize: '0.9rem', color: '#565959' }}>
+                                    <strong>Dirección:</strong> {manualAddress}
+                                </p>
+                            ) : null}
                             <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                                 <span style={{ fontSize: '0.9rem', color: '#166534' }}>Enviado con</span>
                                 <img src="/images/yango_logo.png" alt="Yango" style={{ height: '20px' }} />
