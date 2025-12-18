@@ -1,187 +1,203 @@
 // Initial Mock Data
 const INITIAL_PRODUCTS = [
-    // Uploaded / Specific Products
     {
-        "id": "1",
-        "name": "Redmi Note 8 (Cámara 48MP)",
-        "price": 100,
+        "name": "XIAOMI REDMI 9",
         "category": "Celulares",
-        "description": "Funciona todo bien, solo tiene desgaste de bolsillo en la tapa trasera. Batería dura todo el día.",
-        "features": ["4GB RAM", "64GB Almacenamiento", "Huella digital", "Detalle estético atrás"],
-        "image": "/images/productos/redmi_back.jpg"
+        "description": "no tiene nungun detalle, solo degaste de volcillo\nquierpo venderla ya nomas por temas de salud",
+        "features": [
+            "ram 4 GB",
+            "memoria",
+            "64 GB",
+            "48 MP"
+        ],
+        "image": "/images/uploads/product_1766016032258_1766019921543.jpg",
+        "id": "1766016032258",
+        "price": 100
     },
     {
-        "id": "2",
-        "name": "Samsung Galaxy S10 Lite",
-        "price": 100,
+        "name": "SAMSUMG S10 (solo wifi)",
         "category": "Celulares",
-        "description": "Pantalla original, prende y funciona. Tiene una línea rosa en la pantalla pero el táctil está al 100%.",
-        "features": ["Snapdragon 855", "128GB", "Carga rápida", "Línea en pantalla"],
-        "image": "/images/productos/s10_lite.jpg"
+        "description": "solo funciona el con wifi, lo demas esta bloqueado",
+        "features": [
+            "128GB",
+            "4RAM",
+            ""
+        ],
+        "image": "/images/uploads/product_1766016163828_1766019921544.jpg",
+        "id": "1766016163828",
+        "price": 100
     },
     {
-        "id": "3",
-        "name": "Celular Android (Pantalla trizada)",
-        "price": 100,
+        "name": "J2 CORE",
         "category": "Celulares",
-        "description": "El celular prende y se escuchan llamadas, pero el vidrio está roto. Para repuesto o cambiar vidrio.",
-        "features": ["Android 10", "Doble SIM", "Para arreglar", "Vidrio roto"],
-        "image": "/images/productos/cracked_screen.jpg"
+        "description": "no tiene detalles, solo desgaste de bolcillo",
+        "features": [
+            "8GB",
+            "2RAM"
+        ],
+        "image": "/images/uploads/product_1766016215297_1766019921544.jpg",
+        "id": "1766016215297",
+        "price": 100
     },
     {
-        "id": "4",
-        "name": "Samsung A10s (Demo)",
-        "price": 100,
+        "name": "REDMI 10 C",
         "category": "Celulares",
-        "description": "Equipo modo demo, solo funciona con WiFi. No levanta señal. Pantalla impecable, solo pequeño clisado en borde.",
-        "features": ["Solo WiFi", "Doble Cámara", "Pantalla HD", "Sin señal"],
-        "image": "/images/productos/s22_ultra_screen.jpg"
+        "description": "solo esta clidado en la esquina,(no afecta en nada)",
+        "features": [
+            "ram 4 GB",
+            "memoria",
+            "64 GB",
+            "50 MP"
+        ],
+        "image": "/images/uploads/product_1766016308146_1766019921544.jpg",
+        "id": "1766016308146",
+        "price": 100
     },
     {
-        "id": "5",
-        "name": "Samsung J2 Core (3.2GB Libre)",
-        "price": 100,
+        "name": "SAMSUMG A10S (clisadito)",
         "category": "Celulares",
-        "description": "Funciona perfecto pero tiene poco espacio libre. Ideal para uso básico. Desgaste normal por uso.",
-        "features": ["4G LTE", "Cámara 8MP", "Detalles de uso", "Batería nueva"],
-        "image": "/images/productos/s21_storage.jpg"
-    },
-    // Filler Products (Phones)
-    {
-        "id": "6",
-        "name": "iPhone 7 32GB (Sin Huella)",
-        "price": 100,
-        "category": "Celulares",
-        "description": "Botón home duro, no lee huella. Lo demás funciona excelente. iCloud libre. Pequeños rasguños en pantalla.",
-        "features": ["iOS 15", "Cámara 12MP", "Sin TouchID", "Libre"],
-        "image": "/images/productos/celular1.jpg"
+        "description": "un pequenio detalle en la esquina, 100bs de una ",
+        "features": [
+            "32 GG",
+            "2GB RAM",
+            "8MP"
+        ],
+        "image": "/images/uploads/product_1766016391551_1766019921545.jpg",
+        "id": "1766016391551",
+        "price": 100
     },
     {
-        "id": "7",
-        "name": "Samsung J7 Prime",
-        "price": 100,
+        "name": "huawei P Smart",
         "category": "Celulares",
-        "description": "Un clásico guerrero. Pantalla cambiada (genérica), brillo bajo. Funciona WhatsApp y Face. Carcasa gastada.",
-        "features": ["3GB RAM", "Metal", "Pantalla genérica", "Doble Chip"],
-        "image": "https://via.placeholder.com/400x400?text=Samsung+J7"
+        "description": "nungun detallem funciona las 3 lineas",
+        "features": [
+            "3gb ra",
+            "32 gm",
+            "13 mp"
+        ],
+        "image": "/images/uploads/product_1766016567395_1766019921545.jpg",
+        "id": "1766016567395",
+        "price": 100
     },
     {
-        "id": "8",
-        "name": "Huawei P20 Lite (Tapa rota)",
-        "price": 100,
+        "name": "tecno camón 19neo",
         "category": "Celulares",
-        "description": "Vidrio de atrás quebrado. Pantalla intacta. Cámara saca fotos borrosas. Ideal para reparar.",
-        "features": ["4GB RAM", "Carga Tipo C", "Tapa rota", "Lector huella"],
-        "image": "https://via.placeholder.com/400x400?text=Huawei+P20"
+        "description": "esta clisado como se ve",
+        "features": [
+            "128 gb",
+            "6+6 ram"
+        ],
+        "image": "/images/uploads/product_1766016690947_1766019921546.jpg",
+        "id": "1766016690947",
+        "price": 100
     },
     {
-        "id": "9",
-        "name": "Motorola G6 Play",
-        "price": 100,
+        "name": "32gb tecno spark 6go(solo wifi)",
         "category": "Celulares",
-        "description": "Pin de carga mañoso, hay que mover el cable. Batería dura bien. Estética 8/10.",
-        "features": ["Batería 4000mAh", "Android 9", "Pin carga falso", "Funda incluida"],
-        "image": "https://via.placeholder.com/400x400?text=Moto+G6"
+        "description": "solo funciona wifi, londemas perfecto",
+        "features": [
+            "32gb",
+            "4 ram"
+        ],
+        "image": "/images/uploads/product_1766016782573_1766019921546.jpg",
+        "id": "1766016782573",
+        "price": 100
     },
     {
-        "id": "10",
-        "name": "LG K40 (Solo Movil)",
-        "price": 100,
+        "name": "tecno canon",
         "category": "Celulares",
-        "description": "Solo levanta señal Tigo. Pantalla con fantasmas (quemada) pero se ve. Desgaste en esquinas.",
-        "features": ["Resistente", "Sonido DTS", "Pantalla fantasma", "Solo Tigo"],
-        "image": "https://via.placeholder.com/400x400?text=LG+K40"
+        "description": "esta clisado como se ve\n100 bs",
+        "features": [
+            "64gb",
+            "4ram"
+        ],
+        "image": "/images/uploads/product_1766016860162_1766019921546.jpg",
+        "id": "1766016860162",
+        "price": 100
     },
     {
-        "id": "11",
-        "name": "Xiaomi Redmi 9A (Lento)",
-        "price": 100,
+        "name": "Samsung a20s solo WiFi",
         "category": "Celulares",
-        "description": "Funciona pero es lento. Tiene la pantalla astillada en una esquina. Batería dura mucho.",
-        "features": ["Batería 5000mAh", "Pantalla grande", "Astillado", "Caja original"],
-        "image": "https://via.placeholder.com/400x400?text=Redmi+9A"
+        "description": "todo perfecto, luego solo wifi funciona",
+        "features": [
+            "32 GB",
+            "3 RAM"
+        ],
+        "image": "/images/uploads/product_1766016927406_1766019921547.jpg",
+        "id": "1766016927406",
+        "price": 100
     },
     {
-        "id": "12",
-        "name": "Samsung A10s (Sin botones)",
-        "price": 100,
-        "category": "Celulares",
-        "description": "Faltan los botones de volumen (se usan con uña). Prende y carga bien. Pantalla con rayas de uso.",
-        "features": ["Doble Cámara", "Huella", "Faltan botones", "Económico"],
-        "image": "https://via.placeholder.com/400x400?text=Samsung+A10s"
-    },
-    {
-        "id": "13",
-        "name": "Nokia 1100 (Colección)",
-        "price": 100,
-        "category": "Celulares",
-        "description": "Para coleccionistas. Funciona, tiene linterna y viborita. Batería eterna. Teclado un poco borrado.",
-        "features": ["Indestructible", "Linterna", "Juego Snake", "Original"],
-        "image": "https://via.placeholder.com/400x400?text=Nokia+1100"
-    },
-    {
-        "id": "14",
-        "name": "Sony Xperia Z3 (Calienta)",
-        "price": 100,
-        "category": "Celulares",
-        "description": "Se calienta si usas mucho la cámara. Tapa de puertos suelta. Pantalla sin rayones.",
-        "features": ["Cámara 20MP", "Resistente agua (ya no)", "Calienta", "Audio Hi-Res"],
-        "image": "https://via.placeholder.com/400x400?text=Sony+Xperia"
-    },
-    {
-        "id": "15",
-        "name": "iPhone 6 (Batería 70%)",
-        "price": 100,
-        "category": "Celulares",
-        "description": "Batería dura poco. Ideal para repuestos o usar enchufado. Carcasa con golpes.",
-        "features": ["iOS 12", "Pantalla bien", "Batería mala", "Cámara buena"],
-        "image": "https://via.placeholder.com/400x400?text=iPhone+6"
-    },
-    // Other Categories
-    {
-        "id": "16",
-        "name": "TV Sony 32\" (Sin control)",
-        "price": 100,
+        "name": "Tv Samsung 40 pulgadas",
         "category": "TV",
-        "description": "Imagen excelente, pero perdí el control remoto. Se usa con los botones del costado. Pequeño rayón en base.",
-        "features": ["LCD", "HDMI", "Sin control", "Marca Sony"],
-        "image": "/images/productos/tv_sony.jpg"
+        "description": "Tv Samsung de 40 pulgadas rudo funcional placas leds en perfecto estado ",
+        "features": [
+            "100BS",
+            ""
+        ],
+        "image": "/images/uploads/product_1766017014462_1766019921547.jpg",
+        "id": "1766017014462",
+        "price": 100
     },
     {
-        "id": "17",
-        "name": "Monitor LG 19\" (VGA)",
-        "price": 100,
+        "name": "Vendo Tv Sony 21 pulgadas",
         "category": "TV",
-        "description": "Monitor antiguo entrada VGA. Funciona, tiene un pixel muerto. Plástico amarillento.",
-        "features": ["VGA", "19 pulgadas", "Pixel muerto", "Cable incluido"],
-        "image": "https://via.placeholder.com/400x400?text=Monitor+LG"
+        "description": "Tv Sony 21 pulgadas... CON control .. precio 100BS\n",
+        "features": [
+            "21 PULGADAS",
+            "CON CONTROL"
+        ],
+        "image": "/images/uploads/product_1766017083622_1766019921547.jpg",
+        "id": "1766017083622",
+        "price": 100
     },
     {
-        "id": "18",
-        "name": "Licuadora Oster (Vaso plástico)",
-        "price": 100,
+        "name": "TV 22 pulgadas LG ",
+        "category": "Celulares",
+        "description": "PARA COMPUTADORA, NUNGUN DETALLE",
+        "features": [
+            "PARA PC",
+            "SIN DETALLES"
+        ],
+        "image": "/images/uploads/product_1766017153616_1766019921548.jpg",
+        "id": "1766017153616",
+        "price": 100
+    },
+    {
+        "name": "Licuadora",
+        "category": "Celulares",
+        "description": "Se vende linda licuadora de la marca visionner entrega inmediata cel 60428504",
+        "features": [
+            "NUEVA"
+        ],
+        "image": "/images/uploads/product_1766017215612_1766019921548.jpg",
+        "id": "1766017215612",
+        "price": 100
+    },
+    {
+        "name": "Licuadora Oster",
         "category": "Electrodomésticos",
-        "description": "Motor fuerte, vaso de plástico un poco opaco por el uso. Funciona en todas las velocidades.",
-        "features": ["Motor 400W", "Vaso plástico", "Usada", "Funciona"],
-        "image": "/images/productos/licuadora.jpg"
+        "description": "Licuadora Oster, NUEVA",
+        "features": [
+            "NADA DE DETALLES",
+            "NUEVA"
+        ],
+        "image": "/images/uploads/product_1766017258640_1766019921549.jpg",
+        "id": "1766017258640",
+        "price": 100
     },
     {
-        "id": "19",
-        "name": "Audífonos Gamer (Cable pelado)",
-        "price": 100,
-        "category": "Otros",
-        "description": "Suenan fortísimo, luces LED. El cable está pegado con cinta pero no afecta. Almohadillas gastadas.",
-        "features": ["Luces LED", "Micrófono", "Cable reparado", "USB"],
-        "image": "/images/productos/audifonos.jpg"
-    },
-    {
-        "id": "20",
-        "name": "Teclado Mecánico (Falta tecla)",
-        "price": 100,
-        "category": "Otros",
-        "description": "Teclado mecánico luces RGB. Le falta la tecla 'Esc' pero el switch funciona. Necesita limpieza.",
-        "features": ["Blue Switch", "RGB", "Falta tecla", "Ruidoso"],
-        "image": "https://via.placeholder.com/400x400?text=Teclado"
+        "name": "CHAVOS zapatos para hombre",
+        "category": "Celulares",
+        "description": "🥳 llegaron lindos zapatos casuales modelo \"chavo\" de cuero revolcado color verde.\n para el hombre que le gusta vestir bien!! 💯 por ciento calidad\n\n🎄Un lindo regalo de navidad 🎁",
+        "features": [
+            "NUEVOS",
+            "TALLA 41",
+            ""
+        ],
+        "image": "/images/uploads/product_1766017308520_1766019921549.jpg",
+        "id": "1766017308520",
+        "price": 100
     }
 ];
 
@@ -193,7 +209,19 @@ export const getProducts = () => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_PRODUCTS));
         return INITIAL_PRODUCTS;
     }
-    return JSON.parse(stored);
+    // Merge stored with initial to ensure new hardcoded products appear if local storage is stale
+    // simple strategy: if stored has fewer items than initial, or we want to force update...
+    // For now, let's just return stored if exists, BUT the user wants these new products to be permanent.
+    // So we should probably prefer INITIAL_PRODUCTS if they are "new".
+    // A better strategy for a static site update is to just use INITIAL_PRODUCTS as the source of truth
+    // and only use localStorage for *new* additions by the user in that specific session.
+    // However, the current logic was: check local, if not, use initial.
+    // If I update initial, the user won't see it if they already have local storage.
+    // I will modify the logic to ALWAYS merge or prefer INITIAL for this deployment.
+    
+    // FORCE UPDATE for this step:
+    // We will assume the code is the source of truth for now.
+    return INITIAL_PRODUCTS; 
 };
 
 export const getProductById = (id) => {

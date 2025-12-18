@@ -175,6 +175,28 @@ const AdminDashboard = () => {
                             {loading ? 'Guardando...' : 'Agregar Producto'}
                         </button>
                     </form>
+
+                    <hr style={{ margin: '2rem 0' }} />
+
+                    <div style={{ backgroundColor: '#e7f3fe', padding: '1rem', borderRadius: '8px' }}>
+                        <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: '#0c5460' }}>🔧 Herramienta para Desarrollador</h3>
+                        <p style={{ fontSize: '0.8rem', marginBottom: '0.5rem', color: '#0c5460' }}>
+                            Los productos que agregas aquí se guardan solo en TU navegador.
+                            Para que aparezcan en la página web pública (GitHub/Netlify), necesitas copiar el código y pegarlo en el archivo <code>productService.js</code>.
+                        </p>
+                        <button
+                            type="button"
+                            className="btn"
+                            style={{ backgroundColor: '#007bff', color: 'white', width: '100%', fontSize: '0.9rem' }}
+                            onClick={() => {
+                                const data = JSON.stringify(products, null, 2);
+                                navigator.clipboard.writeText(data);
+                                alert('¡Código copiado! Pégalo en productService.js o envíaselo al programador.');
+                            }}
+                        >
+                            Copiar Código de Productos
+                        </button>
+                    </div>
                 </div>
 
                 {/* List */}
