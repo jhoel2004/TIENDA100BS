@@ -1,0 +1,116 @@
+/* Home.css */
+
+.home-banner {
+    background: linear-gradient(to right, #232f3e, #37475a);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.home-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.home-banner p {
+    font-size: 1.2rem;
+}
+
+.home-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.category-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    font-size: 1rem;
+    width: 100%;
+    transition: color 0.2s;
+}
+
+.category-btn:hover {
+    color: #ff9900;
+}
+
+.product-section {
+    flex: 1;
+}
+
+.product-section h2 {
+    margin-bottom: 1rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .home-banner {
+        padding: 1.5rem;
+    }
+
+    .home-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .home-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .category-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        gap: 1rem;
+    }
+
+    .category-btn {
+        white-space: nowrap;
+        padding: 0.5rem 1rem;
+        background-color: #f3f3f3;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    
+    .category-btn.active {
+        background-color: #ff9900;
+        color: white !important;
+        border-color: #ff9900;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Smaller cards on mobile */
+        gap: 1rem;
+    }
+}

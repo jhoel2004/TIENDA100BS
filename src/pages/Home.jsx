@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
 import { getProducts } from '../services/productService';
+import './Home.css';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -25,36 +26,24 @@ const Home = () => {
     return (
         <div>
             {/* Banner */}
-            <div style={{
-                background: 'linear-gradient(to right, #232f3e, #37475a)',
-                color: 'white',
-                padding: '2rem',
-                borderRadius: '8px',
-                marginBottom: '2rem',
-                textAlign: 'center'
-            }}>
-                <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Todo a 100 Bs</h1>
-                <p style={{ fontSize: '1.2rem' }}>La mejor calidad al mejor precio único.</p>
+            <div className="home-banner">
+                <h1>Todo a 100 Bs</h1>
+                <p>La mejor calidad al mejor precio único.</p>
             </div>
 
-            <div style={{ display: 'flex', gap: '2rem' }}>
+            <div className="home-content">
                 {/* Sidebar Filters */}
-                <aside style={{ width: '250px', flexShrink: 0 }}>
-                    <h3 style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>Categorías</h3>
-                    <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <aside className="sidebar">
+                    <h3>Categorías</h3>
+                    <ul className="category-list">
                         {categories.map(cat => (
                             <li key={cat}>
                                 <button
                                     onClick={() => setFilter(cat)}
+                                    className={`category-btn ${filter === cat ? 'active' : ''}`}
                                     style={{
-                                        background: 'none',
-                                        border: 'none',
-                                        cursor: 'pointer',
                                         fontWeight: filter === cat ? 'bold' : 'normal',
                                         color: filter === cat ? '#ff9900' : '#333',
-                                        textAlign: 'left',
-                                        padding: 0,
-                                        fontSize: '1rem'
                                     }}
                                 >
                                     {cat}
@@ -65,13 +54,9 @@ const Home = () => {
                 </aside>
 
                 {/* Product Grid */}
-                <div style={{ flex: 1 }}>
-                    <h2 style={{ marginBottom: '1rem' }}>Resultados para "{filter}"</h2>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-                        gap: '1.5rem'
-                    }}>
+                <div className="product-section">
+                    <h2>Resultados para "{filter}"</h2>
+                    <div className="product-grid">
                         {filteredProducts.map(product => (
                             <ProductCard key={product.id} product={product} />
                         ))}
