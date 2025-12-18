@@ -42,39 +42,9 @@ const Navbar = () => {
                     </button>
                 </div>
 
-                {/* Links */}
+                {/* Actions */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                    {user ? (
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <Link to="/admin" style={{ fontSize: '0.9rem' }}>
-                                <div>Hola, Admin</div>
-                                <div style={{ fontWeight: 'bold' }}>Panel</div>
-                            </Link>
-                            <button
-                                onClick={logout}
-                                style={{
-                                    background: 'none',
-                                    border: '1px solid #fff',
-                                    color: '#fff',
-                                    padding: '0.2rem 0.5rem',
-                                    borderRadius: '4px',
-                                    cursor: 'pointer',
-                                    fontSize: '0.8rem'
-                                }}
-                            >
-                                Salir
-                            </button>
-                        </div>
-                    ) : (
-                        <Link to="/login" style={{ fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <User size={20} />
-                            <div>
-                                <div>Hola, identifícate</div>
-                                <div style={{ fontWeight: 'bold' }}>Cuenta</div>
-                            </div>
-                        </Link>
-                    )}
-
+                    {/* Hidden Admin Link (Only accessible via URL) */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                         <ShoppingCart size={28} />
                         <span style={{ fontWeight: 'bold', color: '#ff9900' }}>0</span>
