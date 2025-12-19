@@ -14,7 +14,7 @@ const Navbar = () => {
                     <img
                         src="/images/logo/logo.jpg"
                         alt="Tienda 100Bs"
-                        style={{ height: '50px', objectFit: 'contain' }}
+                        style={{ height: '70px', objectFit: 'contain' }}
                     />
                 </Link>
 
